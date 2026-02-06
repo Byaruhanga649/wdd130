@@ -3,13 +3,9 @@
    =============================== */
 :root {
     --primary-color: #1b4965;
-    /* deep river blue */
     --secondary-color: #cae9ff;
-    /* light sky blue */
     --accent1-color: #0b2545;
-    /* dark navy */
     --accent2-color: #e9ecef;
-    /* light gray */
 
     --heading-font: "Georgia", "Times New Roman", serif;
     --body-font: Arial, Helvetica, sans-serif;
@@ -29,8 +25,8 @@
    =============================== */
 body {
     font-family: var(--body-font);
-    color: var(--accent1-color);
     background-color: var(--secondary-color);
+    color: var(--accent1-color);
 }
 
 /* ===============================
@@ -41,51 +37,57 @@ main,
 footer {
     width: 840px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: white;
 }
 
 /* ===============================
-   Header & Navigation
+   Header (CSS Grid)
    =============================== */
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr 2fr;
     align-items: center;
-    gap: 2rem;
     padding: 1rem;
+    background-color: var(--primary-color);
 }
 
-nav ul {
+header img {
+    width: 100px;
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    color: white;
+}
+
+/* ===============================
+   Navigation (Flexbox)
+   =============================== */
+.navigation {
+    display: flex;
+    justify-content: flex-end;
     list-style: none;
+    gap: 1.5rem;
 }
 
-nav ul li {
-    margin-bottom: 0.5rem;
-}
-
-nav a {
+.navigation a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: white;
     font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
 }
 
 /* ===============================
    Headings
    =============================== */
-h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-}
-
-/* ===============================
-   Content Spacing
-   =============================== */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* ===============================
@@ -95,56 +97,72 @@ article {
     position: relative;
 }
 
-/* Hero background image */
 .hero img {
-    display: block;
     width: 100%;
-    height: auto;
+    display: block;
 }
 
-/* Hero heading overlay */
-.hero h1 {
+.hero h2 {
     position: absolute;
     top: 20px;
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
+    background-color: rgba(11, 37, 69, 0.8);
+    color: white;
+}
+
+/* ===============================
+   History Section
+   =============================== */
+.history {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.history img {
+    width: 100%;
+}
+
+/* ===============================
+   Adventures Section
+   =============================== */
+.adventures {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 2rem;
     text-align: center;
-    background-color: var(--accent1-color);
-    color: #ffffff;
-    opacity: 0.8;
 }
 
-/* Hero article overlay */
-.hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 16px;
+.adventures img {
+    width: 100%;
 }
 
-/* Article image inside hero */
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 16px;
-    border: 2px solid var(--primary-color);
+.adventures figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
 /* ===============================
    Footer
    =============================== */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-/* Social media links */
-.socialmedia a {
-    text-decoration: none;
+.social {
+    display: flex;
+    gap: 1rem;
 }
 
-.socialmedia img {
-    width: 80px;
-    margin-right: 8px;
+.social img {
+    width: 30px;
 }
