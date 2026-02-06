@@ -14,7 +14,9 @@
 /* ===============================
    CSS Reset
    =============================== */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -102,13 +104,30 @@ h2 {
     display: block;
 }
 
-.hero h2 {
+.hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     padding: 1rem;
+    text-align: center;
     background-color: rgba(11, 37, 69, 0.8);
     color: white;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 16px;
+    border: 2px solid var(--primary-color);
 }
 
 /* ===============================
@@ -158,11 +177,15 @@ footer {
     color: white;
 }
 
-.social {
+.socialmedia {
     display: flex;
     gap: 1rem;
 }
 
-.social img {
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
     width: 30px;
 }
